@@ -35,7 +35,7 @@ function Profile(){
 
             setTimeout(() => {
                 setError('');
-            }, 2000);
+            }, 9000);
         }
     };
 
@@ -52,7 +52,7 @@ function Profile(){
   },[])
 
     return(
-        <>
+        <div className="card flex flex-col gap-2">
             <div className="fixed top-4 left-1/2 z-50 -translate-x-1/2 flex flex-col gap-2 w-full max-w-sm px-4">
     
                 {/* Success Message */}
@@ -78,20 +78,24 @@ function Profile(){
                 )}
                 
             </div>
-        
-            <div className="w-126 h-70 -mt-12 flex flex-col gap-3 px-4 py-6 bg-zinc-600 rounded-xl">
-                <h3 className="text-xl text-zinc-100">Name: <span className="text-lg font-medium">{data.fullname}</span></h3>
-                <h3 className="text-xl text-gray-100">Email: <span className="text-lg font-medium">{data.email}</span></h3>
-                <span className="text-md text-gray-100 -mb-3">Job Title: </span>
-                <p className="text-md text-gray-200">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, sequi officia! Quis rem, itaque facilis accusantium modi natus ex optio tenetur cumque eum laborum, ipsam, dolorum nesciunt quisquam</p>
-            </div>
-            <button 
+
+            <div className="flex -mt-18 justify-end w-84">
+                <button 
                 onClick={handleLogout} 
-                className="px-4 py-1 mt-6 text-white bg-red-400 rounded-xl"
-            >
+                className="px-4 py-1 mt-6 text-red-300 border border-red-500 bg-rose-600/50 hover:bg-rose-700/40 rounded-xl cursor-pointer"
+                >
                 Logout
-            </button>
-        </>
+                </button>
+            </div>
+
+            <div className="w-84 h-[50vh] flex flex-col px-4 py-6 bg-slate-700/50 border border-slate-500 rounded-xl">
+                <h2 className="text-md px-1 mb-3 text-zinc-100 bg-gray-600 rounded-xl">Name: <span className="text-md font-medium"> {data.fullname}</span></h2>
+                <h2 className="text-md px-1 mb-6 text-gray-100 bg-gray-600 rounded-xl">Email: <span className="text-sm font-medium"> {data.email}</span></h2>
+                <span className="text-md text-gray-100 mb-2">Job Title: </span>
+                <p className="text-sm text-gray-200">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, sequi officia! Quis rem, itaque facilis accusantium modi natus ex optio tenetur cumque eum laborum, ipsam, dolorum nesciunt quisquam</p>
+            </div>
+            
+        </div>
     )
 }
 
